@@ -1,0 +1,44 @@
+.main-content, .section-body, .full-height, .card .chat-box {
+    height: 100% !important;
+}
+
+.logo-custom {
+    width: 120px;
+    float: left;
+    padding: 5px 15px;
+}
+.card {
+    width: 100%;
+    margin-bottom: 0px;
+    padding: 15px;
+}
+
+.card .card-header {
+    display: block;
+}
+
+.card .card-body {
+    padding: 5px 10px;
+}
+
+.card .card-body p {
+    margin: 0px;
+}
+
+.chat-box .chat-content {
+    height: inherit;
+    overflow: auto;
+}
+
+.main-content {
+    padding: 0px;
+}
+
+.section-body>div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#chat-form {
+    padding: 0px 10px;
+}

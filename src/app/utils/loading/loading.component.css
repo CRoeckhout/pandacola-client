@@ -1,0 +1,111 @@
+#loader
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    background-color: #2d2d2dcc;
+}
+
+#loader svg
+{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	max-width: 300px;
+	margin-left: -150px;
+}
+
+.loader-overlay {
+    position: absolute;
+    width: 100%;
+    z-index: 500000;
+    top: 0;
+}
+
+.hand, .bread-bottom, .steak-bottom, .bacon, .cheese, .steak-top, .salad, .bread-top
+{
+	animation-duration: 1.5s;
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+}
+
+@keyframes hand_apparition
+{
+    0% { transform: translateY(200px); opacity: 0; }
+    30% { transform: translateY(0px); opacity: 1; }
+    100% { transform: translateY(0px); opacity: 1; }
+}
+
+.hand { animation-name: hand_apparition; }
+
+@keyframes bread_bottom
+{
+    0% { transform: translateY(-20px); opacity: 0; }
+    20% { transform: translateY(-20px); opacity: 0; }
+    35% { transform: translateY(0px); opacity: 1; }
+    100% { transform: translateY(0px); opacity: 1; }
+}
+
+.bread-bottom { animation-name: bread_bottom; }
+
+@keyframes steak_bottom
+{
+    0% { transform: translate(-143.47px, 310.9px) rotate(-87.1deg); opacity: 0; }
+    25% { transform: translate(-143.47px, 310.9px) rotate(-87.1deg); opacity: 0; }
+    40% { transform: translate(-147.47px, 378.9px) rotate(-90.25deg); opacity: 1; }
+    100% { transform: translate(-147.47px, 378.9px) rotate(-90.25deg); opacity: 1; }
+}
+
+.steak-bottom { animation-name: steak_bottom; }
+
+@keyframes bacon_apparition
+{
+    0% { transform: translate(-25.47px, -83.92px) rotate(-6.65deg); opacity: 0; }
+    30% { transform: translate(-25.47px, -83.92px) rotate(-6.65deg); opacity: 0; }
+    45% { transform: translate(-1px, 14px) rotate(-0.25deg); opacity: 1; }
+    100% { transform: translate(-1px, 14px) rotate(-0.25deg); opacity: 1; }
+}
+
+.bacon { animation-name: bacon_apparition; }
+
+@keyframes cheese_apparition
+{
+    0% { transform: translate(-5px, -30px) rotate(5deg); opacity: 0; }
+    35% { transform: translate(-5px, -30px) rotate(5deg); opacity: 0; }
+    50% { transform: translate(12px, 45px) rotate(-0.25deg); opacity: 1; }
+    100% { transform: translate(12px, 45px) rotate(-0.25deg); opacity: 1; }
+}
+
+.cheese { animation-name: cheese_apparition; }
+
+@keyframes steak_top
+{
+    0% { transform: translate(0px, 0px) rotate(0deg); opacity: 0; }
+    40% { transform: translate(0px, 0px) rotate(0deg); opacity: 0; }
+    55% { transform: translate(-14px, 65px) rotate(-4.5deg); opacity: 1; }
+    100% { transform: translate(-14px, 65px) rotate(-4.5deg); opacity: 1; }
+}
+
+.steak-top { animation-name: steak_top; }
+
+@keyframes salad_apparition
+{
+    0% { transform: translate(0px, 0px) rotate(0deg); opacity: 0; }
+    45% { transform: translate(0px, 0px) rotate(0deg); opacity: 0; }
+    60% { transform: translate(25px, 72px) rotate(7deg); opacity: 1; }
+    100% { transform: translate(25px, 72px) rotate(7deg); opacity: 1; }
+}
+
+.salad { animation-name: salad_apparition; }
+
+@keyframes bread_top
+{
+    0% { transform: translate(0px, 0px) rotate(0deg); opacity: 0; }
+   	50% { transform: translate(0px, 0px) rotate(0deg); opacity: 0; }
+    65% { transform: translate(-19px, 127px) rotate(-10.5deg); opacity: 1; }
+    100% { transform: translate(-19px, 127px) rotate(-10.5deg); opacity: 1; }
+}
+
+.bread-top { animation-name: bread_top; }

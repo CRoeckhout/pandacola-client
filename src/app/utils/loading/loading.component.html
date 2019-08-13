@@ -1,0 +1,8 @@
+
+<div [class.hidden]="!show">
+  <div class="loader-overlay">
+    <div id="loader" [hidden]="!show"  [@enterAnimation]>
+      <h1 [hidden]="loadingValue == 0" style="margin: 140px auto 0; color: white; text-align: center; display: block; font-size: 60px">{{loadingValue}} %</h1>
+    </div>
+  </div>
+</div>

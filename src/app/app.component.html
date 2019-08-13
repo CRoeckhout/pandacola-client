@@ -1,20 +1,79 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- <router-outlet></router-outlet> -->
 
+<app-loading></app-loading>
+<div class="main-content">
+    <section class="section full-height">
+        <div class="section-body">
+            <div class="full-height">
+                <div class="card chat-box full-height" id="mychatbox">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-8 col-md-12">
+                                <img class="logo-custom d-none d-md-block d-lg-block" src="../assets/img/logo.svg">
+                                <h4>Bienvenue sur Chatbot</h4>
+                                <p class="d-none d-lg-block">Chatbot est notre plateforme de questions en ligne, choissez le sujet sur lequel vous
+                                    souhaitez être éclairé.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body chat-content">
+                        <div class="chat-item" *ngFor="let message of conversation.history"
+                            [ngClass]="{'chat-right' : message.bot, 'chat-left' : !message.bot}">
+                            <div class="chat-details">
+                                <div class="chat-text">{{message.content}}</div>
+                                <div class="chat-time">{{message.createdAt | date : 'H:mm'}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer chat-form p-2 row">
+
+                        <div class="col-12 col-md-6 col-lg-3 mb-2" *ngFor="let question of questions"
+                            (click)="selectQuestion(question)">
+                            <div class="card card-success">
+                                <div class="card-body">
+                                    <p>{{question.title}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div class="modal fade" id="endModal" tabindex="-1" role="dialog" aria-labelledby="endModalTitle" aria-hidden="true"
+        data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered text-center" role="document">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title">Avez-vous d'autres question ?</h5>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-success btn-lg mr-2" data-dismiss="modal"
+                        (click)="restartEndTimer()">Oui, s'il vous plait.</button>
+                    <button type="button" class="btn btn-danger btn-lg" (click)="sendData()">Non, merci</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="byeModal" tabindex="-1" role="dialog" aria-labelledby="byeModalTitle" aria-hidden="true"
+        data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered text-center" role="document">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h5 class="modal-title">Merci d'avoir utilisé notre plateforme en ligne.</h5>
+                </div>
+                <div class="modal-body">
+                    <p>N'hésitez pas à nous contacter <a
+                            href="https://help.pandacola.com/hc/fr/requests/new">PANDACOLA</a> sur pour plus de
+                        précisions.</p>
+                    <a
+                        href="https://help.pandacola.com/hc/fr/requests/new">https://help.pandacola.com/hc/fr/requests/new</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
